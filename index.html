@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>samie-product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="samie.css">
+    <style>
+        .container-centered {
+            min-height: 100vh;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: green;
+        }
+        /* Additional styling for the card */
+        .card {
+            min-width: 400px; /* Adjust as needed */
+            max-width: 600px;
+            margin: 10px;
+        }
+
+        body{
+            width: 100vw;
+        }
+
+        /* .resultcontainer {
+           
+        } */
+
+        .main-container{
+            background: blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: green;
+        }
+
+    </style>
+    
+</head>
+<body>
+<div class="sticky-header">
+    <div class="container">
+        <div class="buttons">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               Add product
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="catbtn">
+                Add category
+            </button>
+        </div>
+    </div>
+</div>
+  
+<div class="main-container">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Category</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newCategoryForm"> 
+                        <label for="name">Category Name</label>
+                        <input type="text" name="name" id="categoryName" class="form-control">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnSaveCategory">Save changes</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Product</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form id="newProductForm" enctype="multipart/form-data"> 
+                      <label for="picture">Product Picture</label> 
+                      <input type="file" name="picture" id="picture" class="form-control" required>
+                      <label for="name">Product Name</label>
+                      <input type="text" name="name" id="name" class="form-control">
+                      <label for="category">Product Category</label>
+                      <select name="category" id="category" class="form-control">
+                        <option value=""></option>
+                      </select>
+                      <label for="quantity">Quantity</label>
+                      <input type="text" name="quantity" id="quantity" class="form-control">
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="btnSaveProduct">Save changes</button>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    
+    
+        <div class="resultcontainer">
+            <div id="resultBoxes" class="row"></div>
+        </div>
+    
+      <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="updateProductForm" enctype="multipart/form-data">
+                        <input type="hidden" id="updateProductId">
+                        <div class="mb-3">
+                            <label for="updatePicture" class="form-label">Product Picture</label>
+                            <input type="file" name="picture" id="updatePicture" class="form-control">
+                            <img id="currentPicture" class="img-thumbnail mt-2" alt="Current Picture">
+                        </div>
+                        <div class="mb-3">
+                            <label for="updateProductName" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="updateProductName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="updateProductCategory" class="form-label">Product Category</label>
+                            <select name="updateProductCategory" id="updateProductCategory" class="form-control">
+                              </select>
+                          </div>                      
+                        <div class="mb-3">
+                            <label for="updateProductQuantity" class="form-label">Product Quantity</label>
+                            <input type="text" class="form-control" id="updateProductQuantity">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdateProduct">Update</button>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    $(document).ready(function() {
+        populateCategories();
+
+    });
+</script>
+</body>
+</html>

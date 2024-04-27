@@ -1,0 +1,210 @@
+/* General Styles */
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.sticky-header {
+    background-color: #2b2b2b;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    background-color: #333333;
+    color: #f0f0f0;
+    border-bottom-color: #ffc107;
+    padding: 8px 16px;
+    margin-left: 10px;
+    margin: auto;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #454545;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+}
+
+.modal-header {
+    background-color: #333333;
+    color: #f0f0f0;
+}
+
+.modal-footer {
+    background-color: #333333;
+    color: #f0f0f0;
+}
+
+/* Result Container Styles */
+.resultcontainer {
+    padding: 20px;
+}
+
+.card {
+    background-color: #333333;
+    color: #f0f0f0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 215, 0, 0.2);
+    border-radius: 4px;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+.btnUpdate {
+    background-color: greenyellow;
+    color: #030303;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btnDelete {
+    background-color: pink;
+    color: #030303;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btnUpdate:hover {
+    background-color: #ffa000;
+    color: #030303;
+}
+
+.btnDelete:hover {
+    background-color: #ff1707;
+    color: #030303;
+}
+
+/* Form Styles */
+.form-control {
+    background-color: #454545;
+    color: #f0f0f0;
+    border: none;
+}
+
+.form-control:focus {
+    background-color: #555555;
+    color: #f0f0f0;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #ffc107;
+    color: #333333;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #ffa000;
+    color: #333333;
+}
+
+.btn-secondary {
+    background-color: #454545;
+    color: #f0f0f0;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #555555;
+    color: #f0f0f0;
+}
+
+/* Content Area Styles */
+.content-area {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultcontainer {
+    width: 100%;
+    max-width: 800px;
+}
+
+.resultBox {
+    background-color: #333333;
+    color: #f0f0f0;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.resultBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 215, 0, 0.2);
+    border-radius: 4px;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.resultBox img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card-columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
